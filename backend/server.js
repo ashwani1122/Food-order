@@ -1,4 +1,9 @@
-dotenv.config();
+
+ dotenv.config();
+// const dns = require('dns'); // or require('dns') for older versions
+import dns from "node:dns/promises"
+dns.setServers(['1.1.1.1', '8.8.8.8']);
+
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'

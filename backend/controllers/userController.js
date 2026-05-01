@@ -44,10 +44,16 @@ export const login = async (req,res)=>{
     }
 }
 export const registerUser = async (req,res)=>{ 
+    console.log("controle reached here ")
     const {name , email , password } = req.body;
+        console.log("controle reached here extracted body")
 
     const exists = await userModel.findOne({email});
+            console.log("finding user ")
+
     if(exists){
+                    console.log("user exists")
+
         return res.status(409).json({
             success:false,message:"Email already exists"
         })
